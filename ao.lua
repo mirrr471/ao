@@ -1,3 +1,5 @@
+local endgg == true
+if (end == true) then
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local rootPart = character:WaitForChild("HumanoidRootPart")
@@ -317,7 +319,9 @@ task.delay(5, function()
     windEmitterStartup.Enabled = false
     wind2Emitter.Enabled = false
     wind1EmitterStartup.Enabled = false
+    endgg = false
     print("이펙트 자동 비활성화")
 end)
 
 print("LapseBlueMax 이펙트 생성 완료")
+end

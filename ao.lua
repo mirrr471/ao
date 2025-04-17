@@ -317,6 +317,7 @@ task.delay(5, function()
     windEmitterStartup.Enabled = false
     wind2Emitter.Enabled = false
     wind1EmitterStartup.Enabled = false
+    LapseBlueMax:Destroy()
     print("이펙트 자동 비활성화")
 end)
 

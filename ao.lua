@@ -1,5 +1,5 @@
 local endgg == true
-if (end == true) then
+if (endgg == true) then
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local rootPart = character:WaitForChild("HumanoidRootPart")

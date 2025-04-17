@@ -1,4 +1,4 @@
-local endgg == true
+local endgg = true
 if (endgg == true) then
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()

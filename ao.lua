@@ -30,16 +30,7 @@ task.spawn(function()
     end
 end)
 
--- 캐릭터가 죽거나 리스폰될 때 파트 제거
-character.Humanoid.Died:Connect(function()
-    stillAlive = false
-    lapseBlueMax:Destroy()
-end)
 
-player.CharacterAdded:Connect(function(newCharacter)
-    stillAlive = false
-    lapseBlueMax:Destroy()
-end)
 
 -- Center Attachment
 local center = Instance.new("Attachment")

@@ -1,10 +1,8 @@
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local rootPart = character:WaitForChild("HumanoidRootPart")
-local end = true
+
 -- LapseBlueMax 파트 생성
-if (end == true)
-{
 local lapseBlueMax = Instance.new("Part")
 lapseBlueMax.Name = "LapseBlueMax"
 lapseBlueMax.Size = Vector3.new(23.5, 23.5, 23.5)
@@ -30,7 +28,16 @@ task.spawn(function()
     end
 end)
 
+-- 캐릭터가 죽거나 리스폰될 때 파트 제거
+character.Humanoid.Died:Connect(function()
+    stillAlive = false
+    lapseBlueMax:Destroy()
+end)
 
+player.CharacterAdded:Connect(function(newCharacter)
+    stillAlive = false
+    lapseBlueMax:Destroy()
+end)
 
 -- Center Attachment
 local center = Instance.new("Attachment")
@@ -311,8 +318,6 @@ task.delay(5, function()
     wind2Emitter.Enabled = false
     wind1EmitterStartup.Enabled = false
     print("이펙트 자동 비활성화")
-    end = false
 end)
 
 print("LapseBlueMax 이펙트 생성 완료")
-}

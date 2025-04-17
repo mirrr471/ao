@@ -1,5 +1,8 @@
 local endgg = true
-if (endgg == true) then
+if endgg then
+    -- 한 번만 실행되도록 즉시 endgg를 false로 설정
+    endgg = false
+
     local player = game.Players.LocalPlayer
     local character = player.Character or player.CharacterAdded:Wait()
     local rootPart = character:WaitForChild("HumanoidRootPart")
@@ -296,16 +299,11 @@ if (endgg == true) then
     -- Startup 이펙트 3차원 랜덤 회전
     task.spawn(function()
         while stillAlive do
-            -- X, Y, Z축에 대해 랜덤한 각도 생성 (라디안 단위)
-            local randomX = math.rad(math.random(-180, 180)) -- -180도에서 180도
+            local randomX = math.rad(math.random(-180, 180))
             local randomY = math.rad(math.random(-180, 180))
             local randomZ = math.rad(math.random(-180, 180))
-            
-            -- 랜덤한 3차원 회전 적용
             startup.WorldCFrame = lapseBlueMax.CFrame * CFrame.Angles(randomX, randomY, randomZ)
-            
-            -- 0.1초마다 방향 변경
-            task.wait(10)
+            task.wait(0.1)
         end
     end)
 
@@ -334,7 +332,6 @@ if (endgg == true) then
         windEmitterStartup.Enabled = false
         wind2Emitter.Enabled = false
         wind1EmitterStartup.Enabled = false
-        endgg = false
         print("이펙트 자동 비활성화")
     end)
 

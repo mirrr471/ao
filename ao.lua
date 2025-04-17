@@ -1,8 +1,10 @@
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local rootPart = character:WaitForChild("HumanoidRootPart")
-
+local end = true
 -- LapseBlueMax 파트 생성
+if (end == true)
+{
 local lapseBlueMax = Instance.new("Part")
 lapseBlueMax.Name = "LapseBlueMax"
 lapseBlueMax.Size = Vector3.new(23.5, 23.5, 23.5)
@@ -317,8 +319,9 @@ task.delay(5, function()
     windEmitterStartup.Enabled = false
     wind2Emitter.Enabled = false
     wind1EmitterStartup.Enabled = false
-    LapseBlueMax:Destroy()
     print("이펙트 자동 비활성화")
+    end = false
 end)
 
 print("LapseBlueMax 이펙트 생성 완료")
+}
